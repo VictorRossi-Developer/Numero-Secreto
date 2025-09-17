@@ -18,7 +18,7 @@ public class NumeroMisterioso {
         Scanner inUser = new Scanner(System.in);
         Random random = new Random();
         
-        int numero = random.nextInt(5) + 1; 
+        int numero = random.nextInt(1,6); 
         int numUser;
         int tentativas = 0;
         
@@ -27,17 +27,26 @@ public class NumeroMisterioso {
             numUser = inUser.nextInt();
             tentativas++;
             
+            
+                if (numUser != numero) {
+            
+                System.out.println("Valor deve ser entre 1 a 10.");
+            
+        }
+                        
             if (numUser > numero) {
                 System.out.println("O numero secreto e mais baixo.");
-                System.out.println("Tentativas: " + tentativas);
+
             } else if (numUser < numero) {
                 System.out.println("O número secreto é mais alto.");
-                System.out.println("Tentativas: " + tentativas);
+ 
             }
+            
+        
             
         } while (numUser != numero);
         
-        System.out.println("Parabéns! Você acertou!");
+        System.out.println("Parabens! Voce acertou!");
         System.out.println("Tentativas: " + tentativas);
         
         inUser.close();
